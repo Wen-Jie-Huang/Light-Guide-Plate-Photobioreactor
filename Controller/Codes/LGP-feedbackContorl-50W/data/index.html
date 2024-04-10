@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Light-Guide-Plate culture system</title>
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	border-radius: 8px;
+}
+.button1 {
+    background-color: #31B1CF;
+    width:400px;
+}
+.button2 {
+    background-color: #FFD400;
+    width:600px;
+}
+</style>
+</head>
+<body>
+<center>
+	<br>
+	<h1>Equipment ID:&nbsp<span id="title"></span></h1>
+	<br>
+	<div>
+    Power: <span id="ADCValue">0</span>W &nbsp &nbsp &nbsp &nbsp &nbsp Temperature: <span id="tempValue">0</span> ℃ &nbsp &nbsp &nbsp &nbsp &nbsp System uptime: <span id="timeValue">0</span>  <br><br>
+	</div>
+	<br>
+	
+	<form action="downloadFile"><input type="submit" class="button button1" value="Download Log file"></form><br>
+	<form action="deleteFile"><input type="submit" class="button button1" value="Clean Log file"></form><br><br>
+	<form action="saveSetting"><input type="submit" class="button button2" value="Save setting and Restart"></form><br>
+    <br><br><p>SoftAuthor：<a href="https://kaput-entrance-af0.notion.site/Wenjie-Huang-704b8aef837a4e24b52cd1b647f09d2e" target="_blank">Wenjie Huang</a> 
+<script>
+getTitle();
+getData();
+getTemp();
+getHourMin();
+
+function getTitle() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("title").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readTitle", true);
+  xhttp.send();
+}
+
+function getData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ADCValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readADC", true);
+  xhttp.send();
+}
+function getTemp() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("tempValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readTemp", true);
+  xhttp.send();
+}
+function getHourMin() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("timeValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readRunTime", true);
+  xhttp.send();
+}
+	
+	
+
+
+setInterval(function() {
+	// Call a function repetatively with 5 Second interval
+	getData();
+	getTemp();
+	getHourMin();
+}, 5000); //5000mSeconds update rate
+</script>
+
+</center>
+</body>
+</html>
+

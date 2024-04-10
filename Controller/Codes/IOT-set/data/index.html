@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Light-Guide-Plate culture system</title>
+<script src="jquery.min.js"></script> 
+<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+<script src="knob.js"></script>
+
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	border-radius: 8px;
+}
+.button1 {
+    background-color: #3aaeab;
+    width:400px;
+}
+.button2 {
+    background-color: #3aaeab;
+    width:600px;
+}
+</style>
+
+<script>
+    $('.dial1').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial2').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial3').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial4').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial5').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial11').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial22').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial33').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial44').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+    $('.dial55').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+
+</script>
+</head>
+<body>
+<center>
+	<br>
+	<a href="https://ias.szu.edu.cn/info/1255/5577.htm" target="_blank"><img src="/img/PCSM.jpg"  alt="PCSM" width="660px" ></a>
+	<h1>Equipment ID:&nbsp<span id="title"></span></h1>
+	<br>
+	<div>
+    Turbidity (0-1024): <span id="ADCValue">0</span> &nbsp &nbsp &nbsp &nbsp &nbsp Temperature: <span id="tempValue">0</span> ℃ &nbsp &nbsp &nbsp &nbsp &nbsp System uptime: <span id="timeValue">0</span>  <br><br>
+	</div>
+	<br>
+	
+	<form action="downloadFile"><input type="submit" class="button button1" value="Download Log file"></form><br>
+	<form action="deleteFile"><input type="submit" class="button button1" value="Clean Log file"></form><br><br>
+	<form action="saveSetting"><input type="submit" class="button button2" value="Save setting and Restart"></form><br>
+
+	<p><b>Running hour</b> of 5 time slices.<br>(start from left to right)</p>
+	<input type="text" class="dial1" value="24" data-displayPrevious=true data-fgColor="#e7f0c3" data-thickness=.3 value="29">
+	<input type="text" class="dial2" value="24" data-displayPrevious=true data-fgColor="#a2d5ac" data-thickness=.3 value="29">
+	<input type="text" class="dial3" value="24" data-displayPrevious=true data-fgColor="#3aaeab" data-thickness=.3 value="29">
+	<input type="text" class="dial4" value="24" data-displayPrevious=true data-fgColor="#557a82" data-thickness=.3 value="29">
+	<input type="text" class="dial5" value="24" data-displayPrevious=true data-fgColor="#5b5150" data-thickness=.3 value="29">
+	<br>
+	<p><b>LED brightness</b> of each time slices.<br>(0-100% of total power)</p>
+	<input type="text" class="dial11" value="10" data-displayPrevious=true data-fgColor="#e7f0c3" data-thickness=.3 value="29">
+	<input type="text" class="dial22" value="10" data-displayPrevious=true data-fgColor="#a2d5ac" data-thickness=.3 value="29">
+	<input type="text" class="dial33" value="10" data-displayPrevious=true data-fgColor="#3aaeab" data-thickness=.3 value="29">
+	<input type="text" class="dial44" value="10" data-displayPrevious=true data-fgColor="#557a82" data-thickness=.3 value="29">
+	<input type="text" class="dial55" value="10" data-displayPrevious=true data-fgColor="#5b5150" data-thickness=.3 value="29">
+
+    <br><br><p>SoftAuthor：<a href="https://kaput-entrance-af0.notion.site/Wenjie-Huang-704b8aef837a4e24b52cd1b647f09d2e" target="_blank">Wenjie Huang</a> 
+<script>
+window.onload = function(){
+//$(window).load(function(){ //使用jquery必须在网页加载完成后才能定义事件
+	getTitle();
+	getData();
+	getTemp();
+	
+	setInterval(function() {
+	  // Call a function repetatively with 2 Second interval
+	  getData();
+	  getTemp();
+	  getHourMin();
+	}, 2000); //2000mSeconds update rate
+	
+	
+    $(".dial1").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setTime1?hour="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial2").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setTime2?hour="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial3").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setTime3?hour="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial4").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setTime4?hour="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+	$(".dial5").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setTime5?hour="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial11").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setLight1?pwm="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial22").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setLight2?pwm="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial33").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setLight3?pwm="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+    $(".dial44").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setLight4?pwm="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+	$(".dial55").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setLight5?pwm="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+	
+}
+
+function getTitle() {
+	/*
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("title").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readTitle", true);
+  xhttp.send();
+  */
+	$.get("/readTitle",function(data,status){
+		if(status == "success"){
+			var d = JSON.parse(data);
+			var title = d["title"];
+			var hVals = d["hVals"];
+			var lVals = d["lVals"];
+			// console.log(d);
+			// console.log(title);
+			// console.log(hVals);
+			// console.log(lVals);
+			$(".dial1").val(hVals[0]).trigger('change');
+			$(".dial2").val(hVals[1]).trigger('change');
+			$(".dial3").val(hVals[2]).trigger('change');
+			$(".dial4").val(hVals[3]).trigger('change');
+			$(".dial5").val(hVals[4]).trigger('change');
+			$(".dial11").val(lVals[0]).trigger('change');
+			$(".dial22").val(lVals[1]).trigger('change');
+			$(".dial33").val(lVals[2]).trigger('change');
+			$(".dial44").val(lVals[3]).trigger('change');
+			$(".dial55").val(lVals[4]).trigger('change');
+			$("#title").text(title);
+			
+			
+		}
+	});
+}
+
+function getData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ADCValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readADC", true);
+  xhttp.send();
+}
+function getTemp() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("tempValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readTemp", true);
+  xhttp.send();
+}
+function getHourMin() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("timeValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readRunTime", true);
+  xhttp.send();
+}
+	
+	
+
+</script>
+
+</center>
+</body>
+</html>
+
