@@ -4,9 +4,9 @@
 
 Light Guide Plate Structures: Here you'll find an array of meticulous structural design drawings for various Light Guide Plate Photobioreactor, encompassing 2D layouts, 3D models, detailed material lists, and fabrication instructions, aiming to help you grasp the working principles and construction details of light guide plates photobioreactor.
 
-Controller Hardware Design: To complement the efficient application of light guide plates photobioreactor, this repository also provides circuit schematics, PCB layouts, and component selection recommendations for dedicated controllers. These controller designs are tailored for driving light guide plates photobioreactor, enabling precise control over light intensity, color, and dynamic effects for intelligent light environment management.
+Controller Hardware Design: To complement the efficient application of light guide plates photobioreactor, this repository also provides circuit schematics, PCB layouts, and component selection recommendations for dedicated controllers. These controller designs are tailored for driving light guide plates photobioreactor, enabling precise control over light intensity, monitor temperature, record logs, etc for intelligent light environment management.
 
-Open-Source Code Resources: We have open-sourced software code associated with the light guide plate controllers, including firmware for microcontrollers, host-side control programs, and communication protocol documentation. Written in mainstream programming languages and adhering to modular design principles, these codes are easy to understand and adapt, empowering you to swiftly achieve precise control and data acquisition for light guide plates photobioreactor.
+Open-Source Code Resources: We have open-sourced software code associated with the light guide plate controllers, including firmware for microcontrollers, host-side control programs, and communication protocol documentation. Written in C/C++ and adhering to modular design principles, these codes are easy to understand and adapt, empowering you to swiftly achieve precise control and data acquisition for light guide plates photobioreactor.
 
 【Participation & Contributions:】
 
